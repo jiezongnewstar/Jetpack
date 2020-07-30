@@ -3,41 +3,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_lifeCycle">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.xibei.jetpack.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home">
+        android:id="@+id/nav_lifeCycle"
+        android:name="com.xibei.jetpack.ui.gallery.LifeCycleFragment"
+        android:label="@string/menu_lifecycle"
+        tools:layout="@layout/fragment_lifecycle">
 
         <action
-            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
-            app:destination="@id/nav_home_second" />
+            android:id="@+id/action_HomeFragment_to_lifecycle"
+            app:destination="@id/nav_liveData" />
+
+
     </fragment>
+
     <fragment
-        android:id="@+id/nav_home_second"
-        android:name="com.xibei.jetpack.ui.home.HomeSecondFragment"
-        android:label="@string/home_second"
-        tools:layout="@layout/fragment_home_second">
+        android:id="@+id/nav_liveData"
+        android:name="com.xibei.jetpack.ui.gallery.LiveDataFragment"
+        android:label="@string/menu_livedata"
+        tools:layout="@layout/fragment_livedata">
+
         <action
-            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
-            app:destination="@id/nav_home" />
+            android:id="@+id/action_HomeFragment_to_livedata"
+            app:destination="@id/nav_viewModel" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_viewModel"
+        android:name="com.xibei.jetpack.ui.gallery.ViewModelFragment"
+        android:label="@string/menu_viewmodel"
+        tools:layout="@layout/fragment_viewmodel">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_viewModel"
+            app:destination="@id/nav_dataBinding" />
 
         <argument
             android:name="myArg"
             app:argType="string" />
     </fragment>
 
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.xibei.jetpack.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.xibei.jetpack.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_dataBinding"
+        android:name="com.xibei.jetpack.ui.gallery.DataBindingFragment"
+        android:label="@string/menu_databingding"
+        tools:layout="@layout/fragment_viewmodel">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_databinding"
+            app:destination="@id/nav_room" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_room"
+        android:name="com.xibei.jetpack.ui.gallery.RoomFragment"
+        android:label="@string/menu_room"
+        tools:layout="@layout/fragment_viewmodel">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_room"
+            app:destination="@id/nav_lifeCycle" />
+
+
+    </fragment>
+
 </navigation>

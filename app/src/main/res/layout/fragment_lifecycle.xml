@@ -3,11 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/text_home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="lifecycle 可以监听Activity或者 Fragment 的整个生命周期，都多个Activity或者Fragment的声明周期中，有同样的操作，就可以进行统一处理。\n\n\n接下来我们模拟在界面可见时延时2秒改变中间字的值，这个实现逻辑不是在Framgment 中做，而是在lifccycleObser中实现"/>
+
+    <TextView
+        android:id="@+id/text_lifecycle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

@@ -1,13 +1,13 @@
-package com.xibei.jetpack.ui.home
+package com.xibei.jetpack.ui.gallery
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class LifeCycleViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "LifeCycle"
     }
     val text: LiveData<String> = _text
 }

@@ -1,4 +1,4 @@
-package com.xibei.jetpack.ui.slideshow
+package com.xibei.jetpack.ui.gallery
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.xibei.jetpack.R
 
-class SlideshowFragment : Fragment() {
+class DataBindingFragment : Fragment() {
 
-    private lateinit var slideshowViewModel: SlideshowViewModel
+    private lateinit var dataBindingViewModel: DataBindingViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_slideshow, container, false)
-        val textView: TextView = root.findViewById(R.id.text_slideshow)
-        slideshowViewModel.text.observe(viewLifecycleOwner, Observer {
+        dataBindingViewModel =
+                ViewModelProviders.of(this).get(DataBindingViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_databinding, container, false)
+        val textView: TextView = root.findViewById(R.id.text_databinding)
+        dataBindingViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

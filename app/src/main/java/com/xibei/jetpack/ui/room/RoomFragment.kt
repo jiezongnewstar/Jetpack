@@ -1,4 +1,4 @@
-package com.xibei.jetpack.ui.home
+package com.xibei.jetpack.ui.gallery
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.xibei.jetpack.R
 
-class HomeFragment : Fragment() {
+class RoomFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var roomViewModel: RoomViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        roomViewModel =
+                ViewModelProviders.of(this).get(RoomViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_room, container, false)
+        val textView: TextView = root.findViewById(R.id.text_room)
+        roomViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
