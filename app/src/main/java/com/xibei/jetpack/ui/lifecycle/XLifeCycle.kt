@@ -1,5 +1,6 @@
 package com.xibei.jetpack.ui.lifecycle
 
+import android.os.Handler
 import android.util.Log
 import android.widget.TextView
 import androidx.lifecycle.Lifecycle
@@ -49,6 +50,7 @@ class XLifeCycle(textView: TextView) : LifecycleObserver {
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     private fun destory(){
         Log.e(TAG,"destory")
+
     }
 
 }

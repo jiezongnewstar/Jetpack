@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -14,18 +15,17 @@ class LiveDataFragment : Fragment() {
 
     private lateinit var liveDataViewModel: LiveDataViewModel
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        liveDataViewModel =
-                ViewModelProviders.of(this).get(LiveDataViewModel::class.java)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        liveDataViewModel = ViewModelProviders.of(this).get(LiveDataViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_livedata, container, false)
         val textView: TextView = root.findViewById(R.id.text_livedata)
         liveDataViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+            textView.text = it.toString()
         })
+
+        val btn :Button = root.findViewById(R.id.btn_add)
+        btn.setOnClickListener {liveDataViewModel.text.value = liveDataViewModel.text.value!! + 1 }
+
         return root
     }
 }

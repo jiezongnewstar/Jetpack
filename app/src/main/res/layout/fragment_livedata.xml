@@ -6,6 +6,13 @@
     android:layout_height="match_parent">
 
     <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LiveData是一个数据持有类，数据可以被观察者订阅\n\n能够感知组件的生命周期（Fragment/Activity/Service）\n\n只有组件处于激活状态(STARTED、RESUMED)才会通知观察者有数据更新\n\n\n接下来，我们通过一个点击按钮改变文本的内容来演示，注意，这里不会以传统的监听点击事件，来settext,而是单纯的去改变属性的值"/>
+
+    <TextView
         android:id="@+id/text_livedata"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,4 +25,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/text_livedata"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

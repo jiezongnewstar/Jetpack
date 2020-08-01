@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +11,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="lifecycle 可以监听Activity或者 Fragment 的整个生命周期，都多个Activity或者Fragment的声明周期中，有同样的操作，就可以进行统一处理。\n\n\n接下来我们模拟在界面可见时延时2秒改变中间字的值，这个实现逻辑不是在Framgment 中做，而是在lifccycleObser中实现"/>
+        android:text="lifecycle 可以监听Activity或者 Fragment 的整个生命周期，都多个Activity或者Fragment的声明周期中，有同样的操作，就可以进行统一处理。\n\n\n接下来我们模拟在界面可见时延时2秒改变中间字的值，这个实现逻辑不是在Framgment 中做，而是在lifccycleObser中实现。同时，还可见去观察Log中生命周期执行的顺序"/>
 
     <TextView
         android:id="@+id/text_lifecycle"

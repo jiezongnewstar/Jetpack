@@ -9,5 +9,5 @@ class ViewModelViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
         value = "ViewModel"
     }
-    val text: LiveData<String> = _text
+    val text: MutableLiveData<String> = _text
 }
